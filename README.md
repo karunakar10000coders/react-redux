@@ -1,1 +1,3 @@
-1. store lopla reducer import cheyali....
+1. fetch api call -> get req
+   urls -> api =>
+   https://jsonplaceholder.typicode.com/posts

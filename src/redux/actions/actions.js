@@ -1,11 +1,23 @@
-import { ACTION_TYPES } from "../actionTypes/actionTypes";
+export const getProducts = () => {
+  return async (dispatch) => {
+    const url = "https://jsonplaceholder.typicode.com/posts";
+    const response = await fetch(url);
+    const data = await response.json();
+    dispatch({
+      type: "getproducts",
+      payload: data,
+    });
+  };
+};
 
-export const increment_type = () => {
-  return { type: ACTION_TYPES.increment };
-};
-export const decrement_type = () => {
-  return { type: ACTION_TYPES.decrement };
-};
-export const reset_type = () => {
-  return { type: ACTION_TYPES.reset };
+export const getUsers = () => {
+  return async (dispatch) => {
+    const url = "https://jsonplaceholder.typicode.com/users";
+    const response = await fetch(url);
+    const data = await response.json();
+    dispatch({
+      type: "getusers",
+      payload: data,
+    });
+  };
 };

@@ -1,25 +1,21 @@
-import { ACTION_TYPES } from "../actionTypes/actionTypes";
-
 const initialState = {
-  count: 0,
+  products: [],
+  users: [],
 };
 
 export const reducer = (state = initialState, action) => {
-  //   console.log(sta / te.count);
+  console.log(state, action);
   switch (action.type) {
-    case ACTION_TYPES.increment: {
+    case "getproducts": {
       return {
-        count: state.count + 1,
+        ...state,
+        products: action.payload,
       };
     }
-    case ACTION_TYPES.decrement: {
+    case "getusers": {
       return {
-        count: state.count - 1,
-      };
-    }
-    case ACTION_TYPES.reset: {
-      return {
-        count: 0,
+        ...state,
+        users: action.payload,
       };
     }
     default: {

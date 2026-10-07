@@ -1,6 +1,5 @@
+import { applyMiddleware, createStore } from "redux";
 import { reducer } from "../reducer/reducer";
-import { legacy_createStore as createStore } from "redux";
+import { thunk } from "redux-thunk";
 
-export const store = createStore(reducer);
-
-//redux => redux tooolkit
+export const store = createStore(reducer, applyMiddleware(thunk));
